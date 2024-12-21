@@ -44,7 +44,7 @@ else
 fi
 
 # Alias to reload zsh (e.g. after editing .zshrc or editing plugins)
-alias src='exec zsh'
+alias src='source ~/.xxh/plugins/xxh-plugin-zsh-ohmyzsh/build/pluginrc.zsh'
 
 # Init Starship prompt
 eval "$(starship init zsh)"
