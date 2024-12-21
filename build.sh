@@ -30,6 +30,8 @@ cd $build_dir
 ohmyzsh_home=$build_dir/ohmyzsh
 if [ -x "$(command -v git)" ]; then
   git clone $arg_q --depth 1 https://github.com/ohmyzsh/ohmyzsh.git $ohmyzsh_home
+  git clone $arg_q --depth 1 https://github.com/zsh-users/zsh-autosuggestions  $ohmyzsh_home/custom/plugins/zsh-autosuggestions
+  git clone $arg_q --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git $ohmyzsh_home/custom/plugins/zsh-syntax-highlighting
 else
   echo "git is not installed. Please install it first."
   exit 1
