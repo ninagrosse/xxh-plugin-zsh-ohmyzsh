@@ -21,22 +21,16 @@ do
     cp $CDIR/$f $build_dir/
 done
 
-#portable_url='https://,,,/.tar.gz'
-#tarname=`basename $portable_url`
-#
-#cd $build_dir
-#
-#[ $QUIET ] && arg_q='-q' || arg_q=''
-#[ $QUIET ] && arg_s='-s' || arg_s=''
-#[ $QUIET ] && arg_progress='' || arg_progress='--show-progress'
-#
-#if [ -x "$(command -v wget)" ]; then
-#  wget $arg_q $arg_progress $portable_url -O $tarname
-#elif [ -x "$(command -v curl)" ]; then
-#  curl $arg_s -L $portable_url -o $tarname
-#else
-#  echo Install wget or curl
-#fi
-#
-#tar -xzf $tarname
-#rm $tarname
+cd $build_dir
+
+[ $QUIET ] && arg_q='-q' || arg_q=''
+[ $QUIET ] && arg_s='-s' || arg_s=''
+[ $QUIET ] && arg_progress='' || arg_progress='--show-progress'
+
+ohmyzsh_home=$build_dir/ohmyzsh
+if [ -x "$(command -v git)" ]; then
+  git clone $arg_q --depth 1 https://github.com/ohmyzsh/ohmyzsh.git $ohmyzsh_home
+else
+  echo "git is not installed. Please install it first."
+  exit 1
+fi
