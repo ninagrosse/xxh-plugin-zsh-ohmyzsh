@@ -31,18 +31,6 @@ zoxide)
 source $CURR_DIR/ohmyzsh/oh-my-zsh.sh
 autoload -U compinit && compinit
 
-# Set preferred editor for local and remote sessions
-# Use vscode when using it, otherwise use nano
-if [[ -n $TERM_PROGRAM ]]; then
-  if [[ $TERM_PROGRAM == 'vscode' ]]; then
-    export EDITOR='code --wait'
-  else
-    export EDITOR='nano'
-  fi
-else
-  export EDITOR='nano'
-fi
-
 # Alias to reload zsh (e.g. after editing .zshrc or editing plugins)
 alias src='source ~/.xxh/plugins/xxh-plugin-zsh-ohmyzsh/build/pluginrc.zsh'
 
