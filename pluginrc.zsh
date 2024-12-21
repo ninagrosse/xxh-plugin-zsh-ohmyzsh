@@ -78,3 +78,6 @@ _fzf_comprun() {
 
 # Replace cd with z (zoxide)
 alias cd="z"
+
+# Load machine specific aliases, environment variables etc. from $HOME/.zshrc.local.zsh, if the file exists
+[[ -f $HOME/.zshrc.local.zsh ]] && source $HOME/.zshrc.local.zsh
