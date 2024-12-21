@@ -1,4 +1,4 @@
-Custom Oh My Zsh Plugin for [xxh](https://github.com/xxh/xxh) to be used in conjunction with my cli-tools plugin [ninagrosse/xxh-plugin-prerun-cli-tools](https://github.com/ninagrosse/xxh-plugin-prerun-cli-tools). 
+Custom Oh My Zsh Plugin for [xxh](https://github.com/xxh/xxh) to be used in conjunction with my cli-tools plugin [ninagrosse/xxh-plugin-prerun-cli-tools](https://github.com/ninagrosse/xxh-plugin-prerun-cli-tools). Inspired by my [dotfiles](https://github.com/ninagrosse/dotfiles).
 
 Besides [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) the plugin also installs [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) and [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting).
 
