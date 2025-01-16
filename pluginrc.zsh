@@ -16,16 +16,16 @@ zstyle ':omz:plugins:eza' 'icons' yes
 
 # oh-my-zsh plugins
 export plugins=(git
-history
-common-aliases
-rsync
-ssh
-zsh-autosuggestions
-zsh-syntax-highlighting
-systemadmin
-eza
-fzf
-zoxide)
+  history
+  common-aliases
+  rsync
+  ssh
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  systemadmin
+  eza
+  fzf
+  zoxide)
 
 # load oh-my-zsh
 source $CURR_DIR/ohmyzsh/oh-my-zsh.sh
@@ -41,8 +41,8 @@ eval "$(starship init zsh)"
 alias cat='bat'
 
 # More eza aliases
-alias l='ll' # make alias l the same as ll (eza -gl)
-alias lt='ls --tree' # tree alias (ls is already aliased to eza)
+alias l='ll'             # make alias l the same as ll (eza -gl)
+alias lt='ls --tree'     # tree alias (ls is already aliased to eza)
 alias lat='ls -a --tree' # tree alias including hidden folder/files
 
 # Alias to pipe output to fzf with 'command F' instead of 'command | fzf'
@@ -59,9 +59,19 @@ _fzf_comprun() {
   local command=$1
   shift
   case "$command" in
-    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
-    *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
+  cd) fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+  *) fzf --preview "$show_file_or_dir_preview" "$@" ;;
   esac
+}
+
+# Function for yazi to start it with just a 'y' and cd into the directory, you're currently in, when exiting yazi
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
 }
 
 # Replace cd with z (zoxide)
