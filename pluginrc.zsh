@@ -77,5 +77,8 @@ function y() {
 # Replace cd with z (zoxide)
 alias cd="z"
 
+# Initialize atuin
+eval "$(atuin init zsh)"
+
 # Load machine specific aliases, environment variables etc. from $HOME/.zshrc.local.zsh, if the file exists
 [[ -f $HOME/.zshrc.local.zsh ]] && source $HOME/.zshrc.local.zsh
