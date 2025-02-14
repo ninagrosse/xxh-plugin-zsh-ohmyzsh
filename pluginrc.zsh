@@ -3,6 +3,9 @@ CURR_DIR="$(cd "$(dirname "$0")" && pwd)"
 # oh-my-zsh location
 export ZSH="$CURR_DIR/ohmyzsh"
 
+# Setup $PATH.
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+
 # oh-my-zsh settings
 export ZSH_THEME="bira"
 export DISABLE_MAGIC_FUNCTIONS="true"
