@@ -34,6 +34,9 @@ export plugins=(git
 source $CURR_DIR/ohmyzsh/oh-my-zsh.sh
 autoload -U compinit && compinit
 
+# Set $EDITOR to nvim
+export EDITOR='nvim'
+
 # Alias to reload zsh (e.g. after editing .zshrc or editing plugins)
 alias src='source $XXH_HOME/.xxh/plugins/xxh-plugin-zsh-ohmyzsh/build/pluginrc.zsh'
 
